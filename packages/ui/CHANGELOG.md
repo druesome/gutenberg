@@ -5,7 +5,7 @@
 ### Bug Fixes
 
 -   `Drawer`: Restore the slide-out animation when the popup closes ([#77800](https://github.com/WordPress/gutenberg/pull/77800)).
--   `Card`: Fix missing gap between `Card.Header` and `Card.Content` when the header is not the first child of the card ([#77856](https://github.com/WordPress/gutenberg/pull/77856)).
+-   `Card`: Fix missing gap between `Card.Header` and `Card.Content` when another element (e.g. an image) precedes the header as the first card child ([#77856](https://github.com/WordPress/gutenberg/pull/77856)).
 
 ### Enhancements
 
@@ -14,7 +14,7 @@
 
 ### Documentation
 
--   `Card`: Add Storybook examples for hero and cover image layouts — hero image with header and content, header only, content only, and a full cover image ([#77856](https://github.com/WordPress/gutenberg/pull/77856)).
+-   `Card`: Add Storybook examples showing how to place images directly inside `Card.Root` for hero and cover image layouts, covering four compositions: image with header and content, image with header only, image with content only, and image alone ([#77856](https://github.com/WordPress/gutenberg/pull/77856)).
 
 ## 0.12.0 (2026-04-29)
 
