@@ -141,13 +141,7 @@ async function dev() {
 			'./bin/packages/generate-worker-placeholders.mjs',
 		] );
 
-		// Step 3: Validate TypeScript version
-		console.log( '\n🔍 Validating TypeScript version...' );
-		await exec( 'node', [
-			'./bin/packages/validate-typescript-version.js',
-		] );
-
-		// Step 4: Build TypeScript types
+		// Step 3: Build TypeScript types
 		console.log( '\n📘 Building TypeScript types...\n' );
 		const tsStartTime = Date.now();
 		await exec( 'tsgo', [ '--build' ] ).catch( () => {
@@ -159,13 +153,13 @@ async function dev() {
 		const buildTime = Date.now() - tsStartTime;
 		console.log( `   ✔ Built TypeScript types (${ buildTime }ms)` );
 
-		// Step 5: Check build type declaration files
+		// Step 4: Check build type declaration files
 		console.log( '\n✅ Checking type declaration files...' );
 		await exec( 'node', [
 			'./bin/packages/check-build-type-declaration-files.js',
 		] );
 
-		// Step 6: Build vendors
+		// Step 5: Build vendors
 		console.log( '\n📦 Building vendor files...' );
 		await exec( 'node', [ './bin/packages/build-vendors.mjs' ] );
 
@@ -176,7 +170,7 @@ async function dev() {
 			) }s)\n`
 		);
 
-		// Step 7: Start watch mode with both TypeScript and package builds
+		// Step 6: Start watch mode with both TypeScript and package builds
 		console.log( '👀 Starting watch mode...\n' );
 		console.log( '   - TypeScript compiler watching for type changes' );
 		console.log( '   - Package builder watching for source changes\n' );

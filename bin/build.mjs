@@ -105,13 +105,7 @@ async function build() {
 		] );
 
 		if ( ! skipTypes ) {
-			// Step 3: Validate TypeScript version
-			console.log( '\n🔍 Validating TypeScript version...' );
-			await exec( 'node', [
-				'./bin/packages/validate-typescript-version.js',
-			] );
-
-			// Step 4: Build TypeScript types
+			// Step 3: Build TypeScript types
 			console.log( '\n📘 Building TypeScript types...\n' );
 			const tsStartTime = Date.now();
 			await exec( 'tsgo', [ '--build' ] ).catch( () => {
@@ -123,18 +117,18 @@ async function build() {
 			const buildTime = Date.now() - tsStartTime;
 			console.log( `   ✔ Built TypeScript types (${ buildTime }ms)` );
 
-			// Step 5: Check build type declaration files
+			// Step 4: Check build type declaration files
 			console.log( '\n✅ Checking type declaration files...' );
 			await exec( 'node', [
 				'./bin/packages/check-build-type-declaration-files.js',
 			] );
 		}
 
-		// Step 6: Build vendors
+		// Step 5: Build vendors
 		console.log( '\n📦 Building vendor files...' );
 		await exec( 'node', [ './bin/packages/build-vendors.mjs' ] );
 
-		// Step 7: Build packages
+		// Step 6: Build packages
 		console.log( '\n📦 Building packages (production mode)...' );
 		const buildArgs = process.argv
 			.slice( 2 )
@@ -143,7 +137,7 @@ async function build() {
 			env: { ...process.env, NODE_ENV: 'production' },
 		} );
 
-		// Step 7.5: Build blocks manifests
+		// Step 6.5: Build blocks manifests
 		console.log( '\n📦 Building blocks manifests...' );
 		const blocksDirs = [
 			{
@@ -171,7 +165,7 @@ async function build() {
 			);
 		}
 
-		// Step 8: Build workspace :wp targets
+		// Step 7: Build workspace :wp targets
 		console.log( '\n📦 Building workspace :wp targets...' );
 		await exec(
 			'npm',
