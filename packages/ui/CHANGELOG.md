@@ -18,6 +18,10 @@
 -   `Drawer`: Fade the popup elevation shadow alongside the slide ([#77800](https://github.com/WordPress/gutenberg/pull/77800)).
 -   `Drawer`: Allow mouse-drag swipe-dismiss in the popup-edge padding gutter ([#77800](https://github.com/WordPress/gutenberg/pull/77800)).
 
+### Documentation
+
+-   `Card`: Add Storybook examples for hero and cover image layouts — hero image with header and content, header only, content only, and a full cover image ([#77856](https://github.com/WordPress/gutenberg/pull/77856)).
+
 ## 0.12.0 (2026-04-29)
 
 ### Breaking Changes
