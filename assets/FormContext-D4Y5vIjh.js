@@ -1,0 +1,1 @@
+import{r as e}from"./iframe-DLUg_gld.js";import{N as r}from"./useRenderElement-D-Cp88Y_.js";const t=e.createContext({formRef:{current:{fields:new Map}},errors:{},clearErrors:r,validationMode:"onSubmit",submitAttemptedRef:{current:!1}});function useFormContext(){return e.useContext(t)}export{useFormContext as u};
